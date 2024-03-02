@@ -1,5 +1,5 @@
 Challenge 1
--- Create the customer table
+
 CREATE TABLE customer (
     customer_id SERIAL PRIMARY KEY,
     first_name VARCHAR(30) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE customer (
     updated TIMESTAMP WITHOUT TIME ZONE
 );
 
--- Create the film table
+
 CREATE TABLE film (
     film_id SERIAL PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE film (
     updated TIMESTAMP WITHOUT TIME ZONE
 );
 
--- Create the on_sales table
+
 CREATE TABLE on_sales (
     transaction_id SERIAL PRIMARY KEY,
     customer_id INTEGER,
@@ -32,7 +32,7 @@ CREATE TABLE on_sales (
     FOREIGN KEY (film_id) REFERENCES film(film_id)
 );
 Answer question: 
-The value 'SUMMERDEAL2022' consists of 14 characters, which exceeds this limit.
+The value 'SUMMERDEAL2022' consists of 14 characters, which exceeds the limit.
 
 Challenge 2
 
@@ -119,7 +119,7 @@ ALTER TABLE store
 ADD CONSTRAINT fk_manager_staff_id
 FOREIGN KEY (manager_staff_id) REFERENCES staff(staff_id);
 
--- Table creation for 'customer'
+
 CREATE TABLE customer (
     customer_id SERIAL PRIMARY KEY,
     store_id SMALLINT NOT NULL,
@@ -144,14 +144,14 @@ CREATE TABLE actor (
     last_update TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- Table creation for 'category'
+
 CREATE TABLE category (
     category_id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
     last_update TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- Table creation for 'film'
+
 CREATE TABLE film (
     film_id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,
@@ -171,7 +171,7 @@ CREATE TABLE film (
     FOREIGN KEY (original_language_id) REFERENCES language(language_id)
 );
 
--- Table creation for 'film_actor'
+
 CREATE TABLE film_actor (
     actor_id SMALLINT NOT NULL,
     film_id SMALLINT NOT NULL,
@@ -181,7 +181,7 @@ CREATE TABLE film_actor (
     FOREIGN KEY (film_id) REFERENCES film(film_id)
 );
 
--- Table creation for 'film_category'
+
 CREATE TABLE film_category (
     film_id SMALLINT NOT NULL,
     category_id SMALLINT NOT NULL,
@@ -193,7 +193,7 @@ CREATE TABLE film_category (
 
 
 
--- Table creation for 'inventory'
+
 CREATE TABLE inventory (
     inventory_id SERIAL PRIMARY KEY,
     film_id SMALLINT NOT NULL,
@@ -203,7 +203,7 @@ CREATE TABLE inventory (
     FOREIGN KEY (store_id) REFERENCES store(store_id)
 );
 
--- Table creation for 'rental'
+
 CREATE TABLE rental (
     rental_id SERIAL PRIMARY KEY,
     rental_date TIMESTAMP WITH TIME ZONE NOT NULL,
@@ -217,7 +217,7 @@ CREATE TABLE rental (
     FOREIGN KEY (staff_id) REFERENCES staff(staff_id)
 );
 
--- Table creation for 'payment'
+
 CREATE TABLE payment (
     payment_id SERIAL PRIMARY KEY,
     customer_id SMALLINT NOT NULL,
